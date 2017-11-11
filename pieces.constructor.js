@@ -12,7 +12,7 @@ function Pieces(id,x,y,side){
   this.side = side;
   this.floating = false;
   this.king = false;
-  this.chkRoute = function(x,y,prevX,prevY){ // get current X,Y; fx will return true if possible.
+  this.chkRoute = function(x,y,prevX,prevY){ // get current X,Y return true if possible.
     var i, j, oppositeDir = [2,3,0,1], pntX, pntY;
     // 0. check if in proper square
     x = floor(map(x,0,$dimension,0,10)); // map to 0 - 10
@@ -80,7 +80,7 @@ function Pieces(id,x,y,side){
     console.log("idk why");
     return false; // or else return false
   };
-  this.chkEnemy = function(x,y,side,dir=0){ //return index+1 if found, return null false if not
+  this.chkEnemy = function(x,y,side,dir=0){ //return index+1 if found, else return false
     var i, targetX, targetY;
     // dir 0 = top right | dir 1 = bottom right | dir 2 = bottom left | dir 3 = top left
     // set target x,y value from dir
